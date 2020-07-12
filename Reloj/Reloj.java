@@ -19,11 +19,14 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   Calendar Calendario;
   Thread hilo1;
   Thread hilo2;
+  Thread hilo3;
   JPanel panel;
   JMenuBar menuBar;
-  JMenu menu;
+  JMenu opciones;
   JMenuItem item;
-
+  JMenuItem colorN,colorF,h12,h24,version,agua;
+  int cN = 1;
+  int cF = 1;
   public ComponentesReloj()
   {
     try
@@ -41,12 +44,35 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       lblReloj.setBackground(Color.BLACK);
       lblReloj.setFont(new Font("Calibri", 0, 80));
       hilo1 = new Thread(this);
+
+      //Barra de Menus
       menuBar = new JMenuBar();
-      menu = new JMenu("Ajustes");
+      opciones = new JMenu("Ajustes");
       item = new JMenuItem("Programar");
+
+      //Ajustes y sus opciones
+      colorN = new JMenuItem("Color Num.");
+      colorN.setBackground(Color.RED);
+      colorF = new JMenuItem("Color Fondo");
+      colorF.setBackground(Color.WHITE);
+      h12 = new JMenuItem("12 Horas");
+      h24 = new JMenuItem("24 Horas");
+      version = new JMenuItem("Version");
+      agua = new JMenuItem("Agua");
    
       menuBar.add(item);
-      menuBar.add(menu); 
+      menuBar.add(opciones);
+      opciones.add(colorN);
+      opciones.add(new JSeparator()); 
+      opciones.add(colorF);
+      opciones.add(new JSeparator());
+      opciones.add(h12);
+      opciones.add(new JSeparator()); 
+      opciones.add(h24); 
+      opciones.add(new JSeparator());
+      opciones.add(version);
+      opciones.add(new JSeparator());
+      opciones.add(agua);   
       panel.add(lblReloj);
 
       /*Acciones del panel */
@@ -60,6 +86,10 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       this.setJMenuBar(menuBar);
 
       item.addActionListener(this);
+      colorN.addActionListener(this);
+      colorF.addActionListener(this);
+      version.addActionListener(this);
+      agua.addActionListener(this);
       hilo1.start();
     }
 
@@ -140,6 +170,83 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       Programar programar = new Programar(this.item);
       hilo2 = new Thread(programar);
       hilo2.start();
+    }
+
+    if (event.getSource() == colorN)
+    {
+      cN=cN+1;
+      if(cN>5)
+      {
+        cN=1;
+      }
+      switch (cN)
+      {
+        case 1:
+          lblReloj.setForeground(Color.GREEN);
+          colorN.setBackground(Color.RED);
+        break;
+        case 2:
+          lblReloj.setForeground(Color.RED);
+          colorN.setBackground(Color.BLUE);
+        break;
+        case 3:
+          lblReloj.setForeground(Color.BLUE);
+          colorN.setBackground(Color.YELLOW);
+        break;
+        case 4:
+          lblReloj.setForeground(Color.YELLOW);
+          colorN.setBackground(Color.MAGENTA);
+        break;
+        case 5:
+          lblReloj.setForeground(Color.MAGENTA);
+          colorN.setBackground(Color.GREEN);
+        break;
+      }
+    }
+
+    if (event.getSource() == colorF)
+    {
+      cF=cF+1;
+      if(cF>5)
+      {
+        cF=1;
+      }
+      switch (cF)
+      {
+        case 1:
+          lblReloj.setBackground(Color.BLACK);
+          colorF.setBackground(Color.WHITE);
+        break;
+        case 2:
+          lblReloj.setBackground(Color.WHITE);
+          colorF.setBackground(Color.CYAN);
+        break;
+        case 3:
+          lblReloj.setBackground(Color.CYAN);
+          colorF.setBackground(Color.PINK);
+        break;
+        case 4:
+          lblReloj.setBackground(Color.PINK);
+          colorF.setBackground(Color.ORANGE);
+        break;
+        case 5:
+          lblReloj.setBackground(Color.ORANGE);
+          colorF.setBackground(Color.BLACK);
+        break;
+      }
+    }
+
+    if (event.getSource() == version)
+    {
+      //Ventana Emergente que muestra la version actual del programa.
+      JOptionPane.showMessageDialog(null,"Version: 1.3","Version",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    if (event.getSource() == agua)
+    {
+      Agua awa = new Agua(this.agua);
+      hilo3 = new Thread(awa);
+      hilo3.start();
     }
   }
 }
