@@ -20,8 +20,8 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   Calendar Calendario;
   Thread hilo1;
   Thread hilo2;
-  Thread hilo3;
-  Thread hilo4;
+  Thread hilo6;
+  Thread hilo7;
   JPanel panel;
   JMenuBar menuBar;
   JMenu opciones;
@@ -264,13 +264,13 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
         agua.setBackground(Color.GREEN);
         JOptionPane.showMessageDialog(null,"Se Activo el Modo Rehidratacion","Modo Rehidratacion...",JOptionPane.INFORMATION_MESSAGE);
         Agua awa = new Agua();
-        hilo3 = new Thread(awa);
-        hilo3.start();
+        hilo6 = new Thread(awa);
+        hilo6.start();
         break;
         case 2:
         agua.setBackground(Color.RED);
         JOptionPane.showMessageDialog(null,"Se Desactivo el Modo Rehidratacion","Modo Rehidratacion...",JOptionPane.INFORMATION_MESSAGE);
-        hilo3.stop();
+        hilo6.stop();
         break;
       }    
     }
@@ -278,8 +278,8 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
     if (event.getSource() == menu)
     {
       Menu menus = new Menu(this.menu);
-      hilo4 = new Thread(menus);
-      hilo4.start();
+      hilo7 = new Thread(menus);
+      hilo7.start();
     }
   }
 }
