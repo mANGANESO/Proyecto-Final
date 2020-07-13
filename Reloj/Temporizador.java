@@ -1,10 +1,11 @@
+package reloj.recurso;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.*;
  
-class Temporizador implements Runnable
+ public class Temporizador implements Runnable
 {
   String hora,minuto,segundo,am_pm;
   Calendar Calendario;

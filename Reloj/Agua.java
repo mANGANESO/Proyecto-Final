@@ -1,10 +1,12 @@
+package reloj.recurso;
+
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
-class Agua implements Runnable
+public class Agua implements Runnable
 {
 
 	public Agua()

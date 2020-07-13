@@ -1,8 +1,10 @@
+package reloj.recurso;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.*;
+
 
 public class Reloj
 {

@@ -1,7 +1,8 @@
+package reloj.recurso;
 import java.io.*;
 import java.util.*;
 
-class Archi
+public class Archi
 {
 	
 	public static ArrayList<String> leerTodo(String nombreArchivo)

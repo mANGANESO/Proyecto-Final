@@ -1,10 +1,11 @@
+package reloj.recurso;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
-class Programar extends JFrame implements Runnable, ActionListener
+public class Programar extends JFrame implements Runnable, ActionListener
 {
   JLabel lblSus;
   JPanel panel2;

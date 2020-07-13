@@ -1,10 +1,11 @@
+package reloj.recurso;
 import javax.sound.midi.*;
 import java.util.*;
 import javax.swing.*;
 import java.io.PrintWriter;
 import java.io.*;
 
-class MidiRe
+public class MidiRe
 {
 	public static ArrayList<String> contenido = new ArrayList<String>();
 	private Synthesizer synthe = null;

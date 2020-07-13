@@ -1,3 +1,4 @@
+package reloj.recurso;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
@@ -5,7 +6,7 @@ import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
 
-class Notas extends JFrame implements Runnable, ActionListener
+public class Notas extends JFrame implements Runnable, ActionListener
 {
 	JPanel panel8;
 	JButton btnGuardar;

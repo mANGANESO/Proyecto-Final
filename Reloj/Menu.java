@@ -1,3 +1,4 @@
+package reloj.recurso;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
@@ -5,7 +6,7 @@ import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
 
-class Menu extends JFrame implements Runnable, ActionListener
+public class Menu extends JFrame implements Runnable, ActionListener
 {
 	JMenuItem menu;
 	JPanel panel3;
