@@ -102,7 +102,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       version.addActionListener(this);
       agua.addActionListener(this);
       hilo1.start();
-      hilo3.start();
+      
     }
 
     catch(Exception e)
