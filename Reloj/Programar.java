@@ -112,16 +112,16 @@ class Programar extends JFrame implements Runnable, ActionListener
   }
   public void actionPerformed(ActionEvent event)
   {
-  	 if (event.getSource() == btn)
+  	if (event.getSource() == btn)
     {  
     	boolean carga = true;
     	String ho = (String)opHoras.getSelectedItem();
-        String mi = (String)opMinutos.getSelectedItem();
-        String ap = (String)opAmPm.getSelectedItem();
-        Temporizador timer = new Temporizador(carga);
-        timer.compara(ho,mi,ap);
-        JOptionPane.showMessageDialog(null, "Guardado exitosamente");
-        dispose();   
+      String mi = (String)opMinutos.getSelectedItem();
+      String ap = (String)opAmPm.getSelectedItem();
+      Temporizador timer = new Temporizador(carga);
+      timer.compara(ho,mi,ap);
+      JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+      dispose();   
     }    
    
     //Boton Cancelar
