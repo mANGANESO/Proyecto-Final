@@ -60,40 +60,40 @@ class Notas extends JFrame implements Runnable, ActionListener
 	}
 
 	@Override
-  public void run()
-  {
-  }
+  	public void run()
+  	{}
 
-  public void actionPerformed(ActionEvent event)
-  {
-  	if (event.getSource() == this.btnBorra)
-	{
-		vacio="";
-		txaInfo.setText(vacio);
-		txtNombre.setText(vacio);
-	}
-	else if (event.getSource() == this.btnGuardar)
-	{
-		try
+  	public void actionPerformed(ActionEvent event)
+  	{
+  		if (event.getSource() == this.btnBorra)
 		{
-			String informacion;
-			informacion = txaInfo.getText();
-			String nombre;
-			nombre = txtNombre.getText();
-			Archi.guardarTodo(informacion, nombre);
-			txtNombre.setText("");
 			vacio="";
 			txaInfo.setText(vacio);
+			txtNombre.setText(vacio);
 		}
-		catch(Exception e)
+
+		else if (event.getSource() == this.btnGuardar)
 		{
-			System.out.println("ERROR: Ingrese un Archivo primero.");
+			try
+			{
+				String informacion;
+				informacion = txaInfo.getText();
+				String nombre;
+				nombre = txtNombre.getText();
+				Archi.guardarTodo(informacion, nombre);
+				txtNombre.setText("");
+				vacio="";
+				txaInfo.setText(vacio);
+			}
+			catch(Exception e)
+			{
+				System.out.println("ERROR: Ingrese un Archivo primero.");
+			}
 		}
-	}
-	if (event.getSource() == btnRe)
-  	{
-  		//Cierra la ventana
-      dispose();
+		if (event.getSource() == btnRe)
+  		{
+  			//Cierra la ventana
+      		dispose();
+  		}
   	}
-  }
 }

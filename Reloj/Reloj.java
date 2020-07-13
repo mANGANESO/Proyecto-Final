@@ -58,6 +58,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       menuBar = new JMenuBar();
       opciones = new JMenu("Ajustes");
       item = new JMenuItem("Programar");
+      item.setBackground(Color.RED);
       menu = new JMenuItem("Menu");
       alarma = new JMenuItem("Alarma");
       alarma.setBackground(Color.RED);
@@ -101,8 +102,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       colorF.addActionListener(this);
       version.addActionListener(this);
       agua.addActionListener(this);
-      hilo1.start();
-      
+      hilo1.start();    
     }
 
     catch(Exception e)

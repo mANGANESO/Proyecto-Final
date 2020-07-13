@@ -6,7 +6,6 @@ import java.lang.*;
 import java.util.Arrays;
 class Agua implements Runnable
 {
-
 	public Agua()
 	{
 	}

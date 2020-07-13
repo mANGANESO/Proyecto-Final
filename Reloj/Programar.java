@@ -121,6 +121,7 @@ class Programar extends JFrame implements Runnable, ActionListener
       Temporizador timer = new Temporizador(carga);
       timer.compara(ho,mi,ap);
       JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+      item.setBackground(Color.GREEN);
       dispose();   
     }    
    
@@ -131,6 +132,7 @@ class Programar extends JFrame implements Runnable, ActionListener
       mi = "00";
       ap ="Am";
       lblSus.setText("  " + ho + ":" + mi +" " + ap);
+      item.setBackground(Color.RED);
     }
 
     //Boton Regresar

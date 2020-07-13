@@ -8,19 +8,19 @@ import java.util.Arrays;
 class Alarma extends JFrame implements Runnable, ActionListener
 {
 	JLabel lblAlar;
-  	JPanel panel11;
-  	JButton btn15;
-  	JButton btn16;
-  	JButton btn17;
-  	JMenuItem alarma;
-  	JComboBox opHora;
-  	JComboBox opMinuto;
-  	JComboBox opAP;
-  	String hor = "00";
-  	String min = "00";
-  	String ampm = "Am";
-  	int hs;
-  	int ms;
+  JPanel panel11;
+  JButton btn15;
+  JButton btn16;
+  JButton btn17;
+  JMenuItem alarma;
+  JComboBox opHora;
+  JComboBox opMinuto;
+  JComboBox opAP;
+  String hor = "00";
+  String min = "00";
+  String ampm = "Am";
+  int hs;
+  int ms;
 	public Alarma(JMenuItem alarma)
 	{
 		this.alarma = alarma;
@@ -105,124 +105,133 @@ class Alarma extends JFrame implements Runnable, ActionListener
 	}
 
 	@Override
-  	public void run()
-  	{}
+  public void run()
+  {}
 
-  	public void actionPerformed(ActionEvent event)
+  public void actionPerformed(ActionEvent event)
+  {
+  	//Boton de Guardar la Alarma
+  	if (event.getSource() == btn15)
   	{
-  		//Boton de Guardar la Alarma
-  		if (event.getSource() == btn15)
-  		{
-  			alarma.setBackground(Color.GREEN);
-  		}
-  		//Boton Cancelar
-    	if (event.getSource() == btn16)
-    	{
-      		alarma.setBackground(Color.RED);
-      		hor = "00";
-      		min = "00";
-      		ampm ="Am";
-      		lblAlar.setText("  " + hor + ":" + min +" " + ampm);
-    	}
-
-    	//Boton Regresar
-    	if (event.getSource() == btn17)
-    	{
-      		//Cierra la ventana pero el proceso interno sigue funcionando
-      		dispose();
-    	}
-
-    	if(event.getSource()==opHora)
-    	{
-      		String hor = (String)opHora.getSelectedItem();
-      		String min = (String)opMinuto.getSelectedItem();
-		    String ampm = (String)opAP.getSelectedItem();
-		    int hs = Integer.parseInt(hor);
-		    int ms = Integer.parseInt(min);
-		    if(hs<10)
-		    {
-		    	if(ms<10)
-		        {
-		          lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
-		        }
-		        if(ms>9)
-		        {
-		          lblAlar.setText("0" + hor + ":" + min +" " + ampm);
-		        }
-		    }
-		    if(hs>9)
-		    {
-		        if(ms<10)
-		        {
-		          lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
-		        }
-		        if(ms>9)
-		        {
-		          lblAlar.setText(" " + hor + ":" + min +" " + ampm);
-		        }
-		    }   
-    	}
-
-    	if(event.getSource()==opMinuto)
-    	{
-	      String hor = (String)opHora.getSelectedItem();
-	      String min = (String)opMinuto.getSelectedItem();
-	      String ampm = (String)opAP.getSelectedItem();
-	      int hs = Integer.parseInt(hor);
-	      int ms = Integer.parseInt(min);
-	      if(hs<10)
-	      {
-	        if(ms<10)
-	        {
-	          lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
-	        }
-	        if(ms>9)
-	        {
-	          lblAlar.setText("0" + hor + ":" + min +" " + ampm);
-	        }
-	      }
-	      if(hs>9)
-	      {
-	        if(ms<10)
-	        {
-	          lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
-	        }
-	        if(ms>9)
-	        {
-	          lblAlar.setText(" " + hor + ":" + min +" " + ampm);
-	        }
-	      } 
-    	}
-
-    	if(event.getSource()==opAP)
-    	{
-	      String hor = (String)opHora.getSelectedItem();
-	      String min = (String)opMinuto.getSelectedItem();
-	      String ampm = (String)opAP.getSelectedItem();
-	      int hs = Integer.parseInt(hor);
-	      int ms = Integer.parseInt(min);
-	      if(hs<10)
-	      {
-	        if(ms<10)
-	        {
-	          lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
-	        }
-	        if(ms>9)
-	        {
-	          lblAlar.setText("0" + hor + ":" + min +" " + ampm);
-	        }
-	      }
-	      if(hs>9)
-	      {
-	        if(ms<10)
-	        {
-	          lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
-	        }
-	        if(ms>9)
-	        {
-	          lblAlar.setText(" " + hor + ":" + min +" " + ampm);
-	        }
-	      } 
-	   	}
+  		alarma.setBackground(Color.GREEN);
+      dispose();
   	}
+
+  	//Boton Cancelar
+    if (event.getSource() == btn16)
+    {
+      alarma.setBackground(Color.RED);
+      hor = "00";
+      min = "00";
+      ampm ="Am";
+      lblAlar.setText("  " + hor + ":" + min +" " + ampm);
+    }
+
+    //Boton Regresar
+    if (event.getSource() == btn17)
+    {
+      //Cierra la ventana pero el proceso interno sigue funcionando
+      dispose();
+    }
+
+    if(event.getSource()==opHora)
+    {
+      String hor = (String)opHora.getSelectedItem();
+      String min = (String)opMinuto.getSelectedItem();
+		  String ampm = (String)opAP.getSelectedItem();
+		  int hs = Integer.parseInt(hor);
+		  int ms = Integer.parseInt(min);
+		  if(hs<10)
+		  {
+		    if(ms<10)
+		    {
+		      lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
+		    }
+
+		    if(ms>9)
+		    {
+		      lblAlar.setText("0" + hor + ":" + min +" " + ampm);
+		    }
+		  }
+		  if(hs>9)
+		  {
+		    if(ms<10)
+		    {
+		      lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
+		    }
+
+		    if(ms>9)
+		    {
+		      lblAlar.setText(" " + hor + ":" + min +" " + ampm);
+		    }
+		  }   
+    }
+
+    if(event.getSource()==opMinuto)
+    {
+	   String hor = (String)opHora.getSelectedItem();
+	   String min = (String)opMinuto.getSelectedItem();
+	   String ampm = (String)opAP.getSelectedItem();
+	   int hs = Integer.parseInt(hor);
+	   int ms = Integer.parseInt(min);
+	   if(hs<10)
+	   {
+	     if(ms<10)
+	     {
+	       lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
+	     }
+
+	     if(ms>9)
+	     {
+	       lblAlar.setText("0" + hor + ":" + min +" " + ampm);
+	     }
+	   }
+
+	   if(hs>9)
+	   {
+	     if(ms<10)
+	     {
+	       lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
+	     }
+	     if(ms>9)
+	     {
+	       lblAlar.setText(" " + hor + ":" + min +" " + ampm);
+	     }
+	   } 
+    }
+
+    if(event.getSource()==opAP)
+    {
+	   String hor = (String)opHora.getSelectedItem();
+	   String min = (String)opMinuto.getSelectedItem();
+	   String ampm = (String)opAP.getSelectedItem();
+	   int hs = Integer.parseInt(hor);
+	   int ms = Integer.parseInt(min);
+	   if(hs<10)
+	   {
+	     if(ms<10)
+	     {
+	       lblAlar.setText("0" + hor + ":" + "0" + min +" " + ampm);
+	     }
+
+	     if(ms>9)
+	     {
+	       lblAlar.setText("0" + hor + ":" + min +" " + ampm);
+	     }
+	   }
+
+	   if(hs>9)
+	   {
+	     if(ms<10)
+	     {
+	       lblAlar.setText(" " + hor + ":" + "0" + min +" " + ampm);
+	     }
+
+	     if(ms>9)
+	     {
+	       lblAlar.setText(" " + hor + ":" + min +" " + ampm);
+	     }
+	   } 
+	  }
+  }
 }

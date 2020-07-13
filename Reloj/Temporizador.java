@@ -12,7 +12,7 @@ class Temporizador implements Runnable
   Thread hilo3;
   public Temporizador(boolean carga)
   {
-   carga = carga;
+    carga = carga;
     hilo3 = new Thread(this);
     hilo3.start();
   }
