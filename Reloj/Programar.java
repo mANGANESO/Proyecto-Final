@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
-public class Programar extends JFrame implements Runnable, ActionListener
+class Programar extends JFrame implements Runnable, ActionListener
 {
   JLabel lblSus;
   JPanel panel2;
