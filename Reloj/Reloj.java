@@ -281,5 +281,12 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       hilo7 = new Thread(menus);
       hilo7.start();
     }
-  }  
+  }
+
+  public void compara(int h, int m, String ap)
+  {   
+    h = time1;
+    m = time2;
+    ap = time3;
+  }
 }
