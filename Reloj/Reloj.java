@@ -20,6 +20,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   Calendar Calendario;
   Thread hilo1;
   Thread hilo2;
+  Thread hilo3;
   Thread hilo6;
   Thread hilo7;
   JPanel panel;
@@ -31,6 +32,8 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   int cN = 1;
   int cF = 1;
   int awa = 0;
+  int time1, time2 = 0;
+  String time3 ="";
   public ComponentesReloj()
   {
     try
@@ -99,6 +102,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       version.addActionListener(this);
       agua.addActionListener(this);
       hilo1.start();
+      hilo3.start();
     }
 
     catch(Exception e)
@@ -126,6 +130,23 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       {
         System.out.println("Ha ocurrido un error al obtener la hora");
       }
+    }
+     while(ct == hilo3){
+      int uno,dos;
+      uno = Integer.parseInt(hora);
+      dos = Integer.parseInt(minuto);
+     if (uno == time1 || time2 == dos || time3 == am_pm) {
+       System.out.println("Hola");
+        try
+      {
+        Thread.sleep(1000);
+      }
+
+      catch(Exception e)
+      {
+        System.out.println("Ha ocurrido un error al programar la hora");
+      }
+     }
     }
   }
 
@@ -282,4 +303,9 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       hilo7.start();
     }
   }
-}
+    public void compara(int h, int m, String ap){   
+    h = time1;
+    m = time2;
+    ap = time3;
+   }
+  }

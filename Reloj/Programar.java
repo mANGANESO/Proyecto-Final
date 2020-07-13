@@ -106,18 +106,13 @@ class Programar extends JFrame implements Runnable, ActionListener
   {
     while(true)
     {
-      System.out.println("hola");
+      
       retardo(5000);
     } 
   }
   public void actionPerformed(ActionEvent event)
   {
-    //Boton Guardar
-    if (event.getSource() == btn)
-    {
-
-    }
-
+   
     //Boton Cancelar
     if (event.getSource() == btn2)
     {
@@ -225,6 +220,13 @@ class Programar extends JFrame implements Runnable, ActionListener
           lblSus.setText(" " + ho + ":" + mi +" " + ap);
         }
       } 
+          //Boton Guardar
+    if (event.getSource() == btn)
+    {  
+        ComponentesReloj cr = new ComponentesReloj();
+        cr.compara(h,m,ap);
+        JOptionPane.showMessageDialog(null,"Se ha guardado correctamente");
+    }
     }
   }
   public void retardo(int ms)
@@ -235,7 +237,7 @@ class Programar extends JFrame implements Runnable, ActionListener
     }
     catch(Exception e)
     {
-      System.out.println("Error: al ejecuar el sleep.");
+      System.out.println("Error: al ejecutar el sleep.");
     }
   }
 }
