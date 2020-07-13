@@ -6,38 +6,38 @@ import java.util.*;
  
 class Temporizador implements Runnable
 {
+  JMenuItem item;
   String hora,minuto,segundo,am_pm;
   Calendar Calendario;
   String time1, time2, time3;
   Thread hilo3;
-  public Temporizador(boolean carga)
+  Boolean cierto = true;
+  public Temporizador(JMenuItem item)
   {
-    carga = carga;
+    this.item = item;
     hilo3 = new Thread(this);
     hilo3.start();
   }
-
+  @Override
   public void run()
   {
-   	Thread ct = Thread.currentThread();
-
-   	while(ct ==hilo3)
+   	while(cierto)
    	{
       hora();
-      System.out.println(hora+minuto+am_pm);
       if (hora.equals(time1))
       {
-        hora();
-        System.out.println(hora+minuto+am_pm);
-        if(minuto.equals(time2))
+        if(am_pm.equals(time3))
         {
-          JOptionPane.showMessageDialog(null,"Version: 1.9","Version",JOptionPane.INFORMATION_MESSAGE);
+          if(minuto.equals(time2))
+          {
+            JOptionPane.showMessageDialog(null,"Version: 1.9","Version",JOptionPane.INFORMATION_MESSAGE);
+            cierto=false;
+            item.setBackground(Color.RED);
+          }
         }
       }
-      while(true)
-		  {
-			 retardo(5000);	
-		  }
+      System.out.println("hola");
+      retardo(3000);	    
     }
   }
 

@@ -20,6 +20,7 @@ class Programar extends JFrame implements Runnable, ActionListener
   String ap = "Am";
   int h;
   int m;
+
   public Programar(JMenuItem item)
   {
     this.item = item;
@@ -103,13 +104,8 @@ class Programar extends JFrame implements Runnable, ActionListener
 
   @Override
   public void run()
-  {
-    while(true)
-    {
-      
-      retardo(5000);
-    } 
-  }
+  {}
+
   public void actionPerformed(ActionEvent event)
   {
   	if (event.getSource() == btn)
@@ -118,7 +114,7 @@ class Programar extends JFrame implements Runnable, ActionListener
     	String ho = (String)opHoras.getSelectedItem();
       String mi = (String)opMinutos.getSelectedItem();
       String ap = (String)opAmPm.getSelectedItem();
-      Temporizador timer = new Temporizador(carga);
+      Temporizador timer = new Temporizador(item);
       timer.compara(ho,mi,ap);
       JOptionPane.showMessageDialog(null, "Guardado exitosamente");
       item.setBackground(Color.GREEN);
