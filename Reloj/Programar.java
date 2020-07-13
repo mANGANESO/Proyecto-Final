@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.Arrays;
-class Programar extends JFrame implements Runnable, ActionListener
+public class Programar extends JFrame implements Runnable, ActionListener
 {
   JLabel lblSus;
   JPanel panel2;
@@ -106,18 +106,11 @@ class Programar extends JFrame implements Runnable, ActionListener
   {
     while(true)
     {
-      System.out.println("hola");
       retardo(5000);
     } 
   }
   public void actionPerformed(ActionEvent event)
   {
-    //Boton Guardar
-    if (event.getSource() == btn)
-    {
-
-    }
-
     //Boton Cancelar
     if (event.getSource() == btn2)
     {
@@ -133,7 +126,7 @@ class Programar extends JFrame implements Runnable, ActionListener
       //Cierra la ventana pero el proceso interno sigue funcionando
       dispose();
     }
-
+     //horas
     if(event.getSource()==opHoras)
     {
       String ho = (String)opHoras.getSelectedItem();
@@ -194,6 +187,8 @@ class Programar extends JFrame implements Runnable, ActionListener
           lblSus.setText(" " + ho + ":" + mi +" " + ap);
         }
       } 
+
+
     }
 
     if(event.getSource()==opAmPm)
@@ -226,6 +221,13 @@ class Programar extends JFrame implements Runnable, ActionListener
         }
       } 
     }
+     //Boton Guardar
+    if (event.getSource() == btn)
+    {  
+        ComponentesReloj cr = new ComponentesReloj();
+        cr.compara(h,m,ap);
+        JOptionPane.showMessageDialog(null,"Se ha guardado correctamente");
+    }
   }
   public void retardo(int ms)
   {
@@ -235,7 +237,7 @@ class Programar extends JFrame implements Runnable, ActionListener
     }
     catch(Exception e)
     {
-      System.out.println("Error: al ejecuar el sleep.");
+      System.out.println("Error: al ejecutar el sleep.");
     }
   }
 }
