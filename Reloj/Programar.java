@@ -73,8 +73,8 @@ class Programar extends JFrame implements Runnable, ActionListener
     opMinutos.setBounds(200, 20, 100, 30);
     /*Datos de la comboBox Am/Pm*/
     String[] ampm = new String[2];
-    ampm[0]=("Am");
-    ampm[1]=("Pm");
+    ampm[0]=("AM");
+    ampm[1]=("PM");
     opAmPm = new JComboBox(ampm);
     opAmPm.setBounds(320, 20, 100, 30);
     
@@ -130,7 +130,7 @@ class Programar extends JFrame implements Runnable, ActionListener
     {
       ho = "00";
       mi = "00";
-      ap ="Am";
+      ap ="AM";
       lblSus.setText("  " + ho + ":" + mi +" " + ap);
       item.setBackground(Color.RED);
     }

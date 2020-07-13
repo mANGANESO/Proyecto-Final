@@ -24,14 +24,14 @@ class Temporizador implements Runnable
    	while(ct ==hilo3)
    	{
       hora();
+      System.out.println(hora+minuto+am_pm);
       if (hora.equals(time1))
       {
-        if (minuto.equals(time2))
+        hora();
+        System.out.println(hora+minuto+am_pm);
+        if(minuto.equals(time2))
         {
-          if (am_pm.equals(time3))
-          {
-            JOptionPane.showMessageDialog(null,"Version: 1.9","Version",JOptionPane.INFORMATION_MESSAGE);
-          }
+          JOptionPane.showMessageDialog(null,"Version: 1.9","Version",JOptionPane.INFORMATION_MESSAGE);
         }
       }
       while(true)
@@ -50,6 +50,7 @@ class Temporizador implements Runnable
     time1 = ho;
     time2 = mi;
     time3 = ap;
+    System.out.println(time1+time2+time3);
   }
 
   public void hora()
