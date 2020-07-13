@@ -27,6 +27,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   JMenuItem colorN,colorF,h12,h24,version,agua;
   int cN = 1;
   int cF = 1;
+  int awa = 0;
   public ComponentesReloj()
   {
     try
@@ -59,6 +60,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       h24 = new JMenuItem("24 Horas");
       version = new JMenuItem("Version");
       agua = new JMenuItem("Agua");
+      agua.setBackground(Color.RED);
    
       menuBar.add(item);
       menuBar.add(opciones);
@@ -244,9 +246,27 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
 
     if (event.getSource() == agua)
     {
-      Agua awa = new Agua(this.agua);
-      hilo3 = new Thread(awa);
-      hilo3.start();
+      awa=awa+1;
+      if(awa>2)
+      {
+        cF=0;
+      }
+
+      switch (awa)
+      {
+        case 1:
+        agua.setBackground(Color.GREEN);
+        JOptionPane.showMessageDialog(null,"Se Activo el Modo Rehidratacion","Modo Rehidratacion...",JOptionPane.INFORMATION_MESSAGE);
+        Agua awa = new Agua();
+        hilo3 = new Thread(awa);
+        hilo3.start();
+        break;
+        case 2:
+        agua.setBackground(Color.RED);
+        JOptionPane.showMessageDialog(null,"Se Desactivo el Modo Rehidratacion","Modo Rehidratacion...",JOptionPane.INFORMATION_MESSAGE);
+        hilo3.stop();
+        break;
+      }    
     }
   }
 }
