@@ -112,6 +112,17 @@ class Programar extends JFrame implements Runnable, ActionListener
   }
   public void actionPerformed(ActionEvent event)
   {
+  	 if (event.getSource() == btn)
+    {  
+    	boolean carga = true;
+    	String ho = (String)opHoras.getSelectedItem();
+        String mi = (String)opMinutos.getSelectedItem();
+        String ap = (String)opAmPm.getSelectedItem();
+        Temporizador timer = new Temporizador(carga);
+        timer.compara(ho,mi,ap);
+        JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+        dispose();   
+    }    
    
     //Boton Cancelar
     if (event.getSource() == btn2)
@@ -220,14 +231,7 @@ class Programar extends JFrame implements Runnable, ActionListener
           lblSus.setText(" " + ho + ":" + mi +" " + ap);
         }
       } 
-          //Boton Guardar
-    if (event.getSource() == btn)
-    {  
-        ComponentesReloj cr = new ComponentesReloj();
-        cr.compara(h,m,ap);
-        JOptionPane.showMessageDialog(null,"Se ha guardado correctamente");
-    }
-    }
+   }
   }
   public void retardo(int ms)
   {
