@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.lang.*;
 import java.util.*;
+
 public class Reloj
 {
   ///Reloj apk
@@ -20,10 +21,12 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
   Thread hilo1;
   Thread hilo2;
   Thread hilo3;
+  Thread hilo4;
   JPanel panel;
   JMenuBar menuBar;
   JMenu opciones;
   JMenuItem item;
+  JMenuItem menu;
   JMenuItem colorN,colorF,h12,h24,version,agua;
   int cN = 1;
   int cF = 1;
@@ -50,6 +53,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       menuBar = new JMenuBar();
       opciones = new JMenu("Ajustes");
       item = new JMenuItem("Programar");
+      menu = new JMenuItem("Menu");
 
       //Ajustes y sus opciones
       colorN = new JMenuItem("Color Num.");
@@ -63,6 +67,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       agua.setBackground(Color.RED);
    
       menuBar.add(item);
+      menuBar.add(menu);
       menuBar.add(opciones);
       opciones.add(colorN);
       opciones.add(new JSeparator()); 
@@ -88,6 +93,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       this.setJMenuBar(menuBar);
 
       item.addActionListener(this);
+      menu.addActionListener(this);
       colorN.addActionListener(this);
       colorF.addActionListener(this);
       version.addActionListener(this);
@@ -267,6 +273,13 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
         hilo3.stop();
         break;
       }    
+    }
+
+    if (event.getSource() == menu)
+    {
+      Menu menus = new Menu(this.menu);
+      hilo4 = new Thread(menus);
+      hilo4.start();
     }
   }
 }
