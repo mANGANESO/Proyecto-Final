@@ -63,8 +63,6 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       colorN.setBackground(Color.RED);
       colorF = new JMenuItem("Color Fondo");
       colorF.setBackground(Color.WHITE);
-      h12 = new JMenuItem("12 Horas");
-      h24 = new JMenuItem("24 Horas");
       version = new JMenuItem("Version");
       agua = new JMenuItem("Agua");
       agua.setBackground(Color.RED);
@@ -74,11 +72,7 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       menuBar.add(opciones);
       opciones.add(colorN);
       opciones.add(new JSeparator()); 
-      opciones.add(colorF);
-      opciones.add(new JSeparator());
-      opciones.add(h12);
-      opciones.add(new JSeparator()); 
-      opciones.add(h24); 
+      opciones.add(colorF); 
       opciones.add(new JSeparator());
       opciones.add(version);
       opciones.add(new JSeparator());
