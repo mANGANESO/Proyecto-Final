@@ -30,7 +30,7 @@ class Temporizador implements Runnable
         m=false;
 
         }catch(Exception e){
-          System.out.println("Error al suspender");
+          JOptionPane.showMessageDialog(null, "ErrorMsg", "Failure", JOptionPane.ERROR_MESSAGE);
         }
        }
        retardo(1000); 

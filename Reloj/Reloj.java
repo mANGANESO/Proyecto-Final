@@ -107,7 +107,8 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
 
     catch(Exception e)
     {
-      System.out.println("Ha ocurrio un error al iniciar el programa :(");
+      JOptionPane.showMessageDialog(
+        null, "ErrorMsg", "Failure", JOptionPane.ERROR_MESSAGE);
     }  
   }
 
