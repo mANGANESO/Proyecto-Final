@@ -114,7 +114,7 @@ class Programar extends JFrame implements Runnable, ActionListener
     	String ho = (String)opHoras.getSelectedItem();
       String mi = (String)opMinutos.getSelectedItem();
       String ap = (String)opAmPm.getSelectedItem();
-      Temporizador timer = new Temporizador(item);
+      Temporizador timer = new Temporizador(carga);
       timer.compara(ho,mi,ap);
       JOptionPane.showMessageDialog(null, "Guardado exitosamente");
       item.setBackground(Color.GREEN);
