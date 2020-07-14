@@ -24,8 +24,6 @@ class Alarma extends JFrame implements Runnable, ActionListener
 	public Alarma(JMenuItem alarma)
 	{
 		this.alarma = alarma;
-
-<<<<<<< HEAD
     panel11 = new JPanel();
     panel11.setLayout(null);
     panel11.setBackground(Color.BLACK);
@@ -76,13 +74,12 @@ class Alarma extends JFrame implements Runnable, ActionListener
     opMinuto.setBounds(200, 20, 100, 30);
 
     /*Datos de la comboBox Am/Pm*/
-    String[] ampm = new String[2];
-    ampm[0]=("AM");
-    ampm[1]=("PM");
-    opAP = new JComboBox(ampm);
+    String[] ampm1 = new String[2];
+    ampm1[0]=("AM");
+    ampm1[1]=("PM");
+    opAP = new JComboBox(ampm1);
     opAP.setBounds(320, 20, 100, 30);
-=======
-    	panel11 = new JPanel();
+      panel11 = new JPanel();
     	panel11.setLayout(null);
     	panel11.setBackground(Color.BLACK);
     	panel11.setVisible(true);
@@ -101,46 +98,6 @@ class Alarma extends JFrame implements Runnable, ActionListener
     	btn17 = new JButton("Regresar");
     	btn17.setBounds(320,200, 100,30);
       btn15.setBackground(Color.RED);
-
-    	/*Datos de la comboBox de las Horas*/
-    	int[] horas = new int[25];
-
-    	for (int i =1 ;i <=24; i++ ) 
-    	{	
-      		horas[i] = i;	
-    	}
-
-    	String timerS[] = new String[horas.length]; 
-    	for (int x = 1; x <horas.length; x++ ) 
-    	{
-      		timerS[x] = String.valueOf(horas[x]);       	
-    	}
-    	opHora = new JComboBox(timerS);
-    	opHora.setBounds(80, 20, 100, 30);
-    	opHora.removeItemAt(0);
-
-    	/*Datos de la comboBox de los Minutos*/
-    	int[] minutos = new int[60];
-    	for (int i =1 ;i <=59; i++ ) 
-    	{ 
-      		minutos[i] = i; 
-    	}
-
-    	String timerM[] = new String[minutos.length]; 
-    	for (int y = 0; y <minutos.length; y++ ) 
-    	{
-      		timerM[y] = String.valueOf(minutos[y]);          
-    	}
-    	opMinuto = new JComboBox(timerM);
-    	opMinuto.setBounds(200, 20, 100, 30);
-
-    	/*Datos de la comboBox Am/Pm*/
-    	String[] ampm = new String[2];
-    	ampm[0]=("Am");
-    	ampm[1]=("Pm");
-    	opAP = new JComboBox(ampm);
-    	opAP.setBounds(320, 20, 100, 30);
->>>>>>> origin/master
     
     panel11.add(opHora);
     panel11.add(opMinuto);
