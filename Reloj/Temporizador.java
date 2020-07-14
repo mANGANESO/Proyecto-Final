@@ -25,9 +25,12 @@ class Temporizador implements Runnable
        hora();
        if (hora.equals(time1) && minuto.equals(time2)) 
        {
-        try{
-        Runtime.getRuntime().exec("Rundll32.exe powrprof.dll,SetSuspendState Sleep");
-        m=false;
+        try
+        {
+          JOptionPane.showMessageDialog(null, "EL EQUIPO SE APAGARA EN: 2MIN.", "AVISO", JOptionPane.WARNING_MESSAGE);
+          retardo(120000); 
+          Runtime.getRuntime().exec("Rundll32.exe powrprof.dll,SetSuspendState Sleep");
+          m=false;
 
         }catch(Exception e){
           JOptionPane.showMessageDialog(null, "ErrorMsg", "Failure", JOptionPane.ERROR_MESSAGE);
@@ -47,7 +50,6 @@ class Temporizador implements Runnable
     time1 = ho;
     time2 = mi;
     time3 = ap;
-    
   }
 
   public void hora()

@@ -55,7 +55,6 @@ class Tempo implements Runnable
           }
         }
       }
-      System.out.println("hola");
       retardo(3000);	   
     }
   }
@@ -69,7 +68,6 @@ class Tempo implements Runnable
     time1 = hor;
     time2 = min;
     time3 = ampm;
-    System.out.println(time1+time2+time3);
   }
 
   public void hora()
