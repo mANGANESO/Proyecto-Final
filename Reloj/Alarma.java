@@ -37,10 +37,13 @@ class Alarma extends JFrame implements Runnable, ActionListener
     	lblAlar.setFont(new Font("Calibri", 0, 50));
     	btn15 = new JButton("Guardar");
     	btn15.setBounds(80,200,100,30);
+      btn15.setBackground(Color.GREEN);
     	btn16 = new JButton("Cancelar");
     	btn16.setBounds(200,200,100,30);
+      btn15.setBackground(Color.ORANGE);
     	btn17 = new JButton("Regresar");
     	btn17.setBounds(320,200, 100,30);
+      btn15.setBackground(Color.RED);
 
     	/*Datos de la comboBox de las Horas*/
     	int[] horas = new int[25];

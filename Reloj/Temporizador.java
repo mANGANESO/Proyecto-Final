@@ -22,7 +22,6 @@ class Temporizador implements Runnable
     boolean m = true;
    	while(m == true)
    	{  
-       System.out.println("Cargando hilo");
        hora();
        if (hora.equals(time1) && minuto.equals(time2)) 
        {

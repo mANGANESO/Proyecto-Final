@@ -131,25 +131,6 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
         System.out.println("Ha ocurrido un error al obtener la hora");
       }
     }
-    
-    while(ct == hilo3)
-    {
-      int uno,dos;
-      uno = Integer.parseInt(hora);
-      dos = Integer.parseInt(minuto);
-      if (uno == time1 || time2 == dos || time3 == am_pm) 
-      {
-        System.out.println("Hola");
-        try
-        {
-          Thread.sleep(1000);
-        }
-        catch(Exception e)
-        {
-          System.out.println("Ha ocurrido un error al programar la hora");
-        }
-      }
-    }
   }
 
   //Obtiene la hora del ordenador
@@ -310,12 +291,5 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
       hilo19 = new Thread(alar);
       hilo19.start();
     }
-  }
-
-  public void compara(int h, int m, String ap)
-  {   
-    h = time1;
-    m = time2;
-    ap = time3;
   }
 }
