@@ -36,10 +36,13 @@ class Programar extends JFrame implements Runnable, ActionListener
     lblSus.setFont(new Font("Calibri", 0, 50));
     btn = new JButton("Guardar");
     btn.setBounds(80,200,100,30);
+    btn.setBackground(Color.GREEN);
     btn2 = new JButton("Cancelar");
     btn2.setBounds(200,200,100,30);
+    btn2.setBackground(Color.ORANGE);
     btn3 = new JButton("Regresar");
     btn3.setBounds(320,200, 100,30);
+    btn3.setBackground(Color.RED);
 
     /*Datos de la comboBox de las Horas*/
     int[] horas = new int[25];
@@ -114,9 +117,9 @@ class Programar extends JFrame implements Runnable, ActionListener
     	String ho = (String)opHoras.getSelectedItem();
       String mi = (String)opMinutos.getSelectedItem();
       String ap = (String)opAmPm.getSelectedItem();
-      Temporizador timer = new Temporizador(item);
+      Temporizador timer = new Temporizador(carga);
       timer.compara(ho,mi,ap);
-      JOptionPane.showMessageDialog(null, "Guardado exitosamente");
+      JOptionPane.showMessageDialog(null, "Guardado exitosamente, no cierre la aplicacion ");
       item.setBackground(Color.GREEN);
       dispose();   
     }    

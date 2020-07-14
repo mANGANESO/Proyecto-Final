@@ -6,39 +6,36 @@ import java.util.*;
  
 class Temporizador implements Runnable
 {
-  JMenuItem item;
   String hora,minuto,segundo,am_pm;
   Calendar Calendario;
   String time1, time2, time3;
   Thread hilo3;
-  Boolean cierto = true;
-  public Temporizador(JMenuItem item)
+  public Temporizador(boolean carga)
   {
-    this.item = item;
+    carga = carga;
     hilo3 = new Thread(this);
     hilo3.start();
   }
-  @Override
+   @Override
   public void run()
   {
-   	while(cierto)
-   	{
-      hora();
-      if (hora.equals(time1))
-      {
-        if(am_pm.equals(time3))
-        {
-          if(minuto.equals(time2))
-          {
-            JOptionPane.showMessageDialog(null,"Version: 1.9","Version",JOptionPane.INFORMATION_MESSAGE);
-            cierto=false;
-            item.setBackground(Color.RED);
-          }
+    boolean m = true;
+   	while(m == true)
+   	{  
+       hora();
+       if (hora.equals(time1) && minuto.equals(time2)) 
+       {
+        try{
+        Runtime.getRuntime().exec("Rundll32.exe powrprof.dll,SetSuspendState Sleep");
+        m=false;
+
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null, "ErrorMsg", "Failure", JOptionPane.ERROR_MESSAGE);
         }
-      }
-      System.out.println("hola");
-      retardo(3000);	    
+       }
+       retardo(1000); 
     }
+
   }
 
   public void compara(String ho, String mi, String ap)
@@ -50,7 +47,7 @@ class Temporizador implements Runnable
     time1 = ho;
     time2 = mi;
     time3 = ap;
-    System.out.println(time1+time2+time3);
+    
   }
 
   public void hora()
