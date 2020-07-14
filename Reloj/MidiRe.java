@@ -1,3 +1,4 @@
+package fc.resouy;
 import javax.sound.midi.*;
 import java.util.*;
 import javax.swing.*;

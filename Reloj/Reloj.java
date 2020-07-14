@@ -1,3 +1,4 @@
+package fc.resouy;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -282,9 +283,9 @@ class ComponentesReloj extends JFrame implements Runnable, ActionListener
 
     if (event.getSource() == menu)
     {
-      Menu menus = new Menu(this.menu);
+      /*Menu menus = new Menu(this.menu);
       hilo7 = new Thread(menus);
-      hilo7.start();
+      hilo7.start(); */
     }
     if (event.getSource() == alarma)
     {

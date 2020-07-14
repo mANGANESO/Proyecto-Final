@@ -1,3 +1,4 @@
+package fc.resouy;
 import java.io.*;
 import java.util.*;
 
