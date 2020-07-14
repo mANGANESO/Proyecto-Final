@@ -13,8 +13,10 @@ class Menu extends JFrame implements Runnable, ActionListener
   	JButton btn7;
   	JButton btn8;
   	JButton btn9;
-  	JButton btn10;
   	JButton btnOk;
+  	Thread hilo11;
+  	Thread hilo12;
+  	Thread hilo13;
 
 	public Menu(JMenuItem menu)
 	{
@@ -25,20 +27,17 @@ class Menu extends JFrame implements Runnable, ActionListener
     	panel3.setVisible(true);
 
     	btn7 = new JButton("Lector");
-    	btn7.setBounds(80,200,100,50);
+    	btn7.setBounds(100,50,100,50);
     	btn8 = new JButton("Midi");
-    	btn8.setBounds(200,200,100,50);
+    	btn8.setBounds(250,200,100,50);
     	btn9 = new JButton("Notas");
-    	btn9.setBounds(320,200, 100,50);
-    	btn10 = new JButton("Bonus");
-    	btn10.setBounds(320,200, 100,50);
+    	btn9.setBounds(100,200,100,50);
     	btnOk = new JButton("Regresar");
-    	btnOk.setBounds(320,200, 100,50);
+    	btnOk.setBounds(250,50, 100,50);
 
     	panel3.add(btn7);
     	panel3.add(btn8);
     	panel3.add(btn9);
-    	panel3.add(btn10);
     	panel3.add(btnOk);
 
     	this.add(panel3);
@@ -51,37 +50,41 @@ class Menu extends JFrame implements Runnable, ActionListener
     	btn7.addActionListener(this);
     	btn8.addActionListener(this);
     	btn9.addActionListener(this);
-    	btn10.addActionListener(this);
     	btnOk.addActionListener(this);
 	}
 
 	@Override
-  	public void run()
-  	{
-  	}
-
+  	public void run(){}
   	public void actionPerformed(ActionEvent event)
   	{
-  		if (event.getSource() == btn7)
-  		{
-  		}
-
-  		if (event.getSource() == btn8)
-  		{
-  		}
-
-  		if (event.getSource() == btn9)
-  		{
-  		}
-
-  		if (event.getSource() == btn10)
-  		{
-  		}
-
-  		if (event.getSource() == btnOk)
-  		{
-  			//Cierra la ventana
-      		dispose();
-  		}
+  		//Lector
+  	if (event.getSource() == btn7)
+  	{
+      LectorV2 lv = new LectorV2();
+      hilo11 = new Thread(lv);
+      hilo11.start();
   	}
+
+    //Midi
+  	if (event.getSource() == btn8)
+  	{
+      ReMi rm = new ReMi();
+      hilo12 = new Thread(rm);
+      hilo12.start();
+  	}
+
+    //Notas
+  	if (event.getSource() == btn9)
+  	{
+      Notas nota = new Notas();
+      hilo13 = new Thread(nota);
+      hilo13.start();
+  	}
+
+    //Regresa al Reloj
+  	if (event.getSource() == btnOk)
+  	{
+  	  dispose();
+  	}
+  }
 }
